@@ -1,0 +1,4 @@
+vimrc
+=====
+
+Vim setup

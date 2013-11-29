@@ -1,0 +1,19 @@
+[alias]
+	ci = commit
+	co = checkout
+	br = branch
+	st = status -s
+	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset'
+	ctags = !.git/hooks/ctags
+[user]
+	name = Stan
+	email = sdbondi@gmail.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+[init]
+	templatedir = ~/.git_template

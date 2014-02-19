@@ -12,14 +12,16 @@ for c in "${containers[@]}"; do
   ALIAS="${c%%:*}"
   CONTAINER="${c##*:}"
 
-  # Set docker variables for heypresto database container
-  ip=$(docker inspect -format='{{ .NetworkSettings.IPAddress }}' $CONTAINER)
-  port=($(docker inspect -format='{{ .NetworkSettings.Ports  }}' $CONTAINER | sed "s/^map\[\([0-9]*\)\/\([a-z]\{3,\}\).*\]/\1 \2/"))
+  if [[ `docker ps | grep $CONTAINER` ]]; then
+    # Set docker variables for heypresto database container
+    ip=$(docker inspect -format='{{ .NetworkSettings.IPAddress }}' $CONTAINER)
+    port=($(docker inspect -format='{{ .NetworkSettings.Ports  }}' $CONTAINER | sed "s/^map\[\([0-9]*\)\/\([a-z]\{3,\}\).*\]/\1 \2/"))
 
-  export "${ALIAS}_PORT_${port[0]}_${port[1]^^}"=${port[1]}://$ip:${port[0]}
-  export "${ALIAS}_PORT_${port[0]}_${port[1]^^}_PROTO"=$ip:${port[0]}
-  export "${ALIAS}_PORT_${port[0]}_${port[1]^^}_ADDR"=$ip
-  export "${ALIAS}_PORT_${port[0]}_${port[1]^^}_PORT"=${port[0]}
+    export "${ALIAS}_PORT_${port[0]}_${port[1]^^}"=${port[1]}://$ip:${port[0]}
+    export "${ALIAS}_PORT_${port[0]}_${port[1]^^}_PROTO"=$ip:${port[0]}
+    export "${ALIAS}_PORT_${port[0]}_${port[1]^^}_ADDR"=$ip
+    export "${ALIAS}_PORT_${port[0]}_${port[1]^^}_PORT"=${port[0]}
+  fi
 done
 
 # Some extra postgres setup

@@ -78,6 +78,7 @@ Bundle 'rking/ag.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-surround'
 Bundle 'Raimondi/delimitMate'
 Bundle 'adamlowe/vim-slurper'
@@ -98,25 +99,39 @@ Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 Bundle 'jwhitley/vim-matchit'
 Bundle 'mattn/emmet-vim'
-Bundle 'astashov/vim-ruby-debugger'
+Bundle 'honza/dockerfile.vim'
+" Bundle 'astashov/vim-ruby-debugger'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'plasticboy/vim-markdown'
+Bundle 't9md/vim-ruby-xmpfilter'
+Bundle 'jnwhiteh/vim-golang'
 " }
 "
-" Go syntax {
+" Vim-Ruby Xmpfilter {
+" autocmd FileType ruby nmap <buffer> mm <Plug>(xmpfilter-mark)
+" autocmd FileType ruby xmap <buffer> mm <Plug>(xmpfilter-mark)
 
-" }
+" autocmd FileType ruby nmap <buffer> <c-|> <Plug>(xmpfilter-run)
+" autocmd FileType ruby xmap <buffer> <c-|> <Plug>(xmpfilter-run)
+" " }
+
 
 " autoindent with two spaces, always expand tabs
 autocmd BufNewFile,BufReadPost * set ai ts=2 sw=2 sts=2 et
+
+" Golang {
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+" }
 
 " check for external file changes,  and suppress notices from appearing in command line
 autocmd CursorHold,CursorMoved,BufEnter silent * checktime
 call pathogen#infect()
 syntax on
 
-" let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let g:nerdtree_tabs_open_on_console_startup = 1
@@ -128,11 +143,14 @@ let g:ctrlp_show_hidden = 1 " ensure ctrlp lists hidden files "
 let NERDTreeShowHidden=1
 let NERDTreeWindowSize=40
 
+" Markdown
+let g:vim_markdown_folding_disabled=1
+
 " Ruby Debugger
-let g:ruby_debugger_debug_mode = 1
-let g:ruby_debugger_default_script = 'zeus s'
-let g:ruby_debugger_progname = 'vim'
-map <leader>dbs :Rdebugger 'rails s'<CR>
+" let g:ruby_debugger_debug_mode = 1
+" let g:ruby_debugger_default_script = 'zeus s'
+" let g:ruby_debugger_progname = 'vim'
+" map <leader>dbs :Rdebugger 'rails s'<CR>
 
 let mapleader=","
 inoremap <c-s> <c-c>:w<CR>
@@ -164,6 +182,9 @@ map <leader>na :!nautilus .<CR><CR>
 
 " paste, fix indentation and clear the mark by default
 nnoremap p p=`]`<esc>
+
+" Copy fullpath to global clipboard
+nmap <leader>fp :let @+ = expand("%:p")<CR>
 
 nmap <leader>bx :!bundle exec<space>
 nmap <leader>zx :!zeus<space>

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Create environment variables for docker containers on the host machine
+
+containers=(
+  "DB0:heypresto_postgres"
+  "ES0:heypresto__es_master"
+  "REDIS0:heypresto_redis"
+)
+
+for c in "${containers[@]}"; do
+  ALIAS="${c%%:*}"
+  CONTAINER="${c##*:}"
+
+  # Set docker variables for heypresto database container
+  ip=$(docker inspect -format='{{ .NetworkSettings.IPAddress }}' $CONTAINER)
+  port=($(docker inspect -format='{{ .NetworkSettings.Ports  }}' $CONTAINER | sed "s/^map\[\([0-9]*\)\/\([a-z]\{3,\}\).*\]/\1 \2/"))
+
+  export "${ALIAS}_PORT_${port[0]}_${port[1]^^}"=${port[1]}://$ip:${port[0]}
+  export "${ALIAS}_PORT_${port[0]}_${port[1]^^}_PROTO"=$ip:${port[0]}
+  export "${ALIAS}_PORT_${port[0]}_${port[1]^^}_ADDR"=$ip
+  export "${ALIAS}_PORT_${port[0]}_${port[1]^^}_PORT"=${port[0]}
+done
+
+# Some extra postgres setup
+chmod 0600 ~/.pgpass
+echo "$DB0_PORT_5432_TCP_ADDR:$DB0_PORT_5432_TCP_PORT:heypresto_development:heypresto_root:password" > ~/.pgpass
+
+function hppsql() {
+  psql -U heypresto_root -h $DB0_PORT_5432_TCP_ADDR heypresto_development
+}

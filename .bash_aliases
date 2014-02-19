@@ -48,3 +48,6 @@ alias android-disconnect="fusermount -u /media/nexus4"
 
 # VIM
 alias vim='vim --servername VIM'
+
+# Docker
+alias dr=docker

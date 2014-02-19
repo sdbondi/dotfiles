@@ -3,11 +3,14 @@
 	co = checkout
 	br = branch
 	st = status -s
+  ff = flow feature
+  fh = flow hotfix
+  fr = flow release
 	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset'
 	ctags = !.git/hooks/ctags
 [user]
-	name = Stan
-	email = sdbondi@gmail.com
+	name = Stan Bondi
+	email = stan@fixate.it
 [color]
   diff = auto
   status = auto
@@ -17,3 +20,7 @@
   pager = true
 [init]
 	templatedir = ~/.git_template
+[push]
+	default = simple
+[core]
+	autocrlf = input

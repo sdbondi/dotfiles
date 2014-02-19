@@ -47,7 +47,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-export EDITOR='emacs -nw'
+export EDITOR='vim --servername=VIM'
 export ENV='development'
 
 # enable color support of ls and also add handy aliases
@@ -71,6 +71,9 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# Bash profile
+source ~/.bash_profile
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -79,6 +82,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# Fix git completion - http://29a.ch/2013/8/9/fixing-bash-autocomplete-on-ubuntu-13-04
+source /usr/share/bash-completion/completions/git
+complete -o default -o nospace -F _git g
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -98,8 +105,8 @@ CLEAR="\[\033[0m\]"
 
 export PS1="\[\e]0;\u@\h: \W\a\]${debian_chroot:+($debian_chroot)}\u@\h:\W$YELLOW$(parse_git_branch)$CLEAR$ "
 
-if [ -f ~/Projects/code/z/z.sh ];then
-	. ~/Projects/code/z/z.sh
+if [ -f ~/Projects/github/z/z.sh ];then
+	. ~/Projects/github/z/z.sh
 fi
 
 function say() {
@@ -138,16 +145,16 @@ genpasswd() {
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
 
+export GOROOT=~/.golang
+
 if [ -f ~/.bash_prompt ];then
     . ~/.bash_prompt
 fi
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:/home/stan/.scripts:$PATH"
-# Add play framework
-export PATH="$HOME/.scala/play:$PATH"
+if [ -f ~/.bash_functions ];then
+  . ~/.bash_functions
+fi
 
-function md() {
-    mkdir -p $1 && cd $1
-}
-
+if [ -f ~/.dockerenv ]; then
+  . ~/.dockerenv
+fi

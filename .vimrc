@@ -246,7 +246,7 @@ map <Leader>rc :w<CR> :!clear; make<CR> :!./bin/Debug/%<<CR><CR>
   map <leader>gd :Gdiff<CR>
 
   " git gui
-  map <leader>ggui :!git cola &<CR><CR>
+  map <leader>ggui :!git cola > /dev/null 2>&1 &<CR><CR>
   map <leader>gw :!git add . && git commit -m "WIP"
 " }
 

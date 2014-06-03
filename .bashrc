@@ -94,17 +94,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Git prompt
-function parse_git_branch {
- ref=$( git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/') || return
- echo ${ref#refs/heads/}
-}
-
-YELLOW="\[\033[0;33m\]"
-CLEAR="\[\033[0m\]"
-
-export PS1="\[\e]0;\u@\h: \W\a\]${debian_chroot:+($debian_chroot)}\u@\h:\W$YELLOW$(parse_git_branch)$CLEAR$ "
-
 if [ -f ~/Projects/github/z/z.sh ];then
 	. ~/Projects/github/z/z.sh
 fi
@@ -145,7 +134,14 @@ genpasswd() {
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
 
-export GOROOT=~/.golang
+md() {
+  local dir=$1
+  mkdir -p $dir && cd $_
+}
+
+# NPM / NODE
+PATH="$PATH:$HOME/.npm/bin"
+PATH="$PATH:$HOME/.bin"
 
 if [ -f ~/.bash_prompt ];then
     . ~/.bash_prompt
@@ -155,6 +151,4 @@ if [ -f ~/.bash_functions ];then
   . ~/.bash_functions
 fi
 
-if [ -f ~/.dockerenv ]; then
-  . ~/.dockerenv
-fi
+export RUBYGEMS_SOURCE=https://gems.cloudafrica.net

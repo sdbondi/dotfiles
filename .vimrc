@@ -83,7 +83,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'Raimondi/delimitMate'
 Bundle 'adamlowe/vim-slurper'
 Bundle 'kien/ctrlp.vim'
-Bundle 'slim-template/vim-slim'
 Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'ddollar/nerdcommenter'
@@ -102,11 +101,11 @@ Bundle 'mattn/emmet-vim'
 Bundle 'honza/dockerfile.vim'
 " Bundle 'astashov/vim-ruby-debugger'
 Bundle 'editorconfig/editorconfig-vim'
-Bundle 'slim-template/vim-slim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'plasticboy/vim-markdown'
 Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'jnwhiteh/vim-golang'
+" Bundle 'Valloric/YouCompleteMe'
 " }
 "
 " Vim-Ruby Xmpfilter {
@@ -117,6 +116,9 @@ Bundle 'jnwhiteh/vim-golang'
 " autocmd FileType ruby xmap <buffer> <c-|> <Plug>(xmpfilter-run)
 " " }
 
+" Filetype associations {
+au BufRead,BufNewFile *.god setfiletype ruby
+" }
 
 " autoindent with two spaces, always expand tabs
 autocmd BufNewFile,BufReadPost * set ai ts=2 sw=2 sts=2 et
@@ -135,9 +137,12 @@ let g:Powerline_symbols = 'fancy'
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let g:nerdtree_tabs_open_on_console_startup = 1
-let g:ctrlp_max_height = 25
 let g:syntastic_check_on_open=1
+" Ctrl P
+let g:ctrlp_max_height = 25
 let g:ctrlp_show_hidden = 1 " ensure ctrlp lists hidden files "
+let g:ctrl_custom_ignore = 'public/uploads/.*'
+
 
 "Nerd tree
 let NERDTreeShowHidden=1

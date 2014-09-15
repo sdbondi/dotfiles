@@ -104,7 +104,7 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'plasticboy/vim-markdown'
 Bundle 't9md/vim-ruby-xmpfilter'
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-golang'
 " Bundle 'Valloric/YouCompleteMe'
 " }
 "

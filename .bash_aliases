@@ -52,5 +52,9 @@ alias vim='vim --servername VIM'
 # Docker
 alias dr=docker
 
+# Vagrant
+alias vs='vagrant ssh'
+
 # Clients
 alias ltdgtun='ssh -NL36666:lovetodogood.org.za:36666 lovetodogood@lovetodogood.org.za'
+

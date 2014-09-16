@@ -54,6 +54,8 @@ alias dr=docker
 
 # Vagrant
 alias vs='vagrant ssh'
+alias vu='vagrant up'
+alias vh='vagrant halt'
 
 # Clients
 alias ltdgtun='ssh -NL36666:lovetodogood.org.za:36666 lovetodogood@lovetodogood.org.za'

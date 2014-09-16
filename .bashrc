@@ -152,3 +152,4 @@ if [ -f ~/.bash_functions ];then
 fi
 
 export RUBYGEMS_SOURCE=https://gems.cloudafrica.net
+export GOPATH=$HOME/.golang

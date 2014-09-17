@@ -7,9 +7,6 @@ alias aptre='sudo aptitude remove'
 alias aptupd='sudo aptitude update'
 alias aptupg='sudo aptitude upgrade'
 
-alias sshmp='echo B3z10yQgE;ssh themouz@themousepotatowebsite.co.za'
-alias sshhz='echo BaRd3Bj8; ssh stan@fixate.it'
-
 alias isit='ps -e | grep -i'
 
 # Command Enhancements

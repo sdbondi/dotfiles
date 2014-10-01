@@ -94,8 +94,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -f ~/Projects/github/z/z.sh ];then
-	. ~/Projects/github/z/z.sh
+if [ -f ~/code/z/z.sh ];then
+	. ~/code/z/z.sh
 fi
 
 function say() {

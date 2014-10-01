@@ -309,7 +309,7 @@ map <leader>rp :!touch tmp/restart.txt<CR><CR>
 " select the current method in ruby (or it block in rspec)
 map <leader>sm /end<CR>?\<def\>\\|\<it\><CR>:noh<CR>V%
 map <leader>sf :e spec/factories/
-map <leader>sbl :!subl .<CR><CR>
+map <leader>sbl :!subl . > /dev/null 2> /dev/null &<CR><CR>
 
 " j and k navigate through wrapped lines
 nmap k gk

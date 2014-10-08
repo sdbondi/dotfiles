@@ -184,6 +184,7 @@ map <leader>. :noh<CR>
 map <leader>n :NERDTreeTabsToggle<CR>
 map <leader>ff :NERDTreeFind<CR>
 map <leader>na :!nautilus .<CR><CR>
+map <leader>s :set syntax=
 
 " paste, fix indentation and clear the mark by default
 nnoremap p p=`]`<esc>

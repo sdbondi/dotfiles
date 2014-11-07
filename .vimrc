@@ -105,6 +105,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'plasticboy/vim-markdown'
 Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'fatih/vim-golang'
+Bundle 'maxbrunsfeld/vim-yankstack'
 " Bundle 'Valloric/YouCompleteMe'
 " }
 "
@@ -143,13 +144,17 @@ let g:ctrlp_max_height = 25
 let g:ctrlp_show_hidden = 1 " ensure ctrlp lists hidden files "
 let g:ctrl_custom_ignore = 'public/uploads/.*'
 
-
 "Nerd tree
 let NERDTreeShowHidden=1
 let NERDTreeWindowSize=40
 
 " Markdown
 let g:vim_markdown_folding_disabled=1
+
+" Yank Stack
+let g:yankstack_map_keys = 0
+nmap <A-p> <Plug>yankstack_substitute_older_paste
+nmap <A-P> <Plug>yankstack_substitute_newer_paste
 
 " Ruby Debugger
 " let g:ruby_debugger_debug_mode = 1

@@ -47,7 +47,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-export EDITOR='vim --servername=VIM'
+export EDITOR='vim'
 export ENV='development'
 
 # enable color support of ls and also add handy aliases

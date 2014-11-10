@@ -10,7 +10,5 @@ fi
 
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
 
-export HP_EC2_HOST=ec2-54-194-182-171.eu-west-1.compute.amazonaws.com
-
 # export EC2_HOME=$HOME/.bin/ec2_tools/
 # export PATH=$PATH:$EC2_HOME/bin

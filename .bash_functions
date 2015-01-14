@@ -3,5 +3,5 @@ function md() {
 }
 
 function ai2pdf() {
-  gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$2 $1
+  gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$1.pdf $1
 }

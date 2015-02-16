@@ -8,7 +8,7 @@ fi
 
 # export RBENV_VERSION=2.1.0 # rbx-2.2.1
 
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
 # export EC2_HOME=$HOME/.bin/ec2_tools/
 # export PATH=$PATH:$EC2_HOME/bin

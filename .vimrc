@@ -146,6 +146,13 @@ let g:ctrlp_max_height = 25
 let g:ctrlp_show_hidden = 1 " ensure ctrlp lists hidden files "
 let g:ctrl_custom_ignore = 'public/uploads/.*'
 
+" Ruby hash
+let g:rubyhash_map_keys=0
+nnoremap <silent> <Leader>ry :call ToSymbolKeysLinewise()<CR>
+nnoremap <silent> <Leader>rs :call ToStringKeysLinewise()<CR>
+nnoremap <silent> <Leader>rr :call To19KeysLinewise()<CR>
+
+
 "Nerd tree
 let NERDTreeShowHidden=1
 let NERDTreeWindowSize=40

@@ -107,6 +107,7 @@ Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'fatih/vim-golang'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'wakatime/vim-wakatime'
+Bundle 'rorymckinley/vim-rubyhash'
 " Bundle 'Valloric/YouCompleteMe'
 " }
 "

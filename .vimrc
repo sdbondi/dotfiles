@@ -166,7 +166,7 @@ nmap <A-p> <Plug>yankstack_substitute_older_paste
 nmap <A-P> <Plug>yankstack_substitute_newer_paste
 
 " Ruby makros
-let @d = 'Obinding.pry'
+let @d = 'Orequire "pry-byebug";binding.pry'
 
 
 " Ruby Debugger

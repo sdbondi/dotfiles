@@ -1,5 +1,5 @@
 function md() {
-  mkdir -p $1 && cd $_
+  mkdir -p "$1" && cd "$_"
 }
 
 function ai2pdf() {

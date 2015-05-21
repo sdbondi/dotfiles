@@ -151,5 +151,5 @@ if [ -f ~/.bash_functions ];then
   . ~/.bash_functions
 fi
 
-export RUBYGEMS_SOURCE=https://gems.cloudafrica.net
 export GOPATH=$HOME/.golang
+export PATH=$PATH:$HOME/applications/Android/android-studio/bin

@@ -152,4 +152,4 @@ if [ -f ~/.bash_functions ];then
 fi
 
 export GOPATH=$HOME/.golang
-export PATH=$PATH:$HOME/applications/Android/android-studio/bin
+export PATH=$PATH:$HOME/applications/Android/android-studio/bin:$HOME/applications/Android/Sdk/platform-tools:$HOME/applications/Android/Sdk/tools

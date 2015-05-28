@@ -142,7 +142,7 @@ md() {
 # NPM / NODE
 PATH="$PATH:$HOME/.npm/bin"
 PATH="$PATH:$HOME/.bin"
-export NODE_PATH=$HOME/.npm:$NODE_PATH
+export NODE_PATH=$HOME/.npm/lib/node_modules:$NODE_PATH
 
 if [ -f ~/.bash_prompt ];then
     . ~/.bash_prompt

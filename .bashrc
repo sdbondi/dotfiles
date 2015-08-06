@@ -143,6 +143,7 @@ PATH="$PATH:$HOME/.bin"
 PATH="$PATH:$HOME/.bin/system_browser"
 
 # NPM / NODE
+PATH="$PATH:$HOME/.npm/bin"
 export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 if [ -f ~/.bash_prompt ];then

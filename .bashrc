@@ -139,10 +139,11 @@ md() {
   mkdir -p $dir && cd $_
 }
 
-# NPM / NODE
-PATH="$PATH:$HOME/.npm/bin"
 PATH="$PATH:$HOME/.bin"
-export NODE_PATH=$HOME/.npm/lib/node_modules:$NODE_PATH
+PATH="$PATH:$HOME/.bin/system_browser"
+
+# NPM / NODE
+export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 if [ -f ~/.bash_prompt ];then
     . ~/.bash_prompt
@@ -155,3 +156,4 @@ fi
 export GOPATH=$HOME/.golang
 export PATH=$PATH:$HOME/applications/Android/android-studio/bin:$HOME/applications/Android/Sdk/platform-tools:$HOME/applications/Android/Sdk/tools
 export PATH=$PATH:/usr/local/go/bin
+

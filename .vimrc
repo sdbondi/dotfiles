@@ -104,10 +104,11 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'plasticboy/vim-markdown'
 Bundle 't9md/vim-ruby-xmpfilter'
-Bundle 'fatih/vim-golang'
+" Bundle 'fatih/vim-golang'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'wakatime/vim-wakatime'
 Bundle 'rorymckinley/vim-rubyhash'
+Bundle 'marijnh/tern_for_vim'
 " Bundle 'Valloric/YouCompleteMe'
 " }
 "
@@ -230,6 +231,7 @@ map <leader>bp :bp<CR>
 
 map <leader>tp :tabp<CR>
 map <leader>tn :tabn<CR>
+map <leader>fj :%!python -m json.tool<CR>
 
 map <leader>= <C-w>=
 

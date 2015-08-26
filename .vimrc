@@ -104,7 +104,7 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'plasticboy/vim-markdown'
 Bundle 't9md/vim-ruby-xmpfilter'
-" Bundle 'fatih/vim-golang'
+Bundle 'fatih/vim-go'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'wakatime/vim-wakatime'
 Bundle 'rorymckinley/vim-rubyhash'
@@ -126,11 +126,6 @@ au BufRead,BufNewFile *.god setfiletype ruby
 
 " autoindent with two spaces, always expand tabs
 autocmd BufNewFile,BufReadPost * set ai ts=2 sw=2 sts=2 et
-
-" Golang {
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
-
-" }
 
 " check for external file changes,  and suppress notices from appearing in command line
 autocmd CursorHold,CursorMoved,BufEnter silent * checktime

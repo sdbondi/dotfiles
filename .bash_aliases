@@ -9,9 +9,10 @@ alias aptupg='sudo aptitude upgrade'
 
 alias isit='ps -e | grep -i'
 
-# Command Enhancements
 alias g='git'
 alias say='espeak -v en '
+
+alias ..='cd ..'
 
 # Make sure git autocomplete works for alias
 complete -o default -o nospace -F _git g

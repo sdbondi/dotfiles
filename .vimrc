@@ -142,6 +142,9 @@ let g:ctrlp_max_height = 25
 let g:ctrlp_show_hidden = 1 " ensure ctrlp lists hidden files "
 let g:ctrl_custom_ignore = 'public/uploads/.*'
 
+" Go Lang
+let g:go_fmt_command = "gofmt"
+
 " Ruby hash
 let g:rubyhash_map_keys=0
 nnoremap <silent> <Leader>ry :call ToSymbolKeysLinewise()<CR>

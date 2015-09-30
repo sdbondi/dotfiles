@@ -154,12 +154,11 @@ if [ -f ~/.bash_functions ];then
   . ~/.bash_functions
 fi
 
-export GOPATH=$HOME/.golang
-export PATH=$PATH:$HOME/applications/Android/android-studio/bin:$HOME/applications/Android/Sdk/platform-tools:$HOME/applications/Android/Sdk/tools
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
 if [[ -f ~/.bin/autoenv/activate.sh ]]; then
   source ~/.bin/autoenv/activate.sh
 fi
 
-
+[[ -s "/home/stan/.gvm/scripts/gvm" ]] && source "/home/stan/.gvm/scripts/gvm"
+export GOPATH=${GOPATH:-$HOME/.golang}
+export PATH=$PATH:$HOME/applications/Android/android-studio/bin:$HOME/applications/Android/Sdk/platform-tools:$HOME/applications/Android/Sdk/tools
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin

@@ -21,6 +21,9 @@ complete -o default -o nospace -F _git g
 alias irb='irb --readline -r irb/completion'
 alias rii='ri -Tf ansi'
 
+# Node
+alias mtr='meteor'
+
 # RBENV
 alias rbe='rbenv'
 alias rbev='rbenv versions'

@@ -52,6 +52,7 @@ alias vim='vim --servername VIM'
 
 # Docker
 alias dr=docker
+alias drst='cat .dev-containers | xargs docker start'
 
 # Vagrant
 alias vs='vagrant ssh'

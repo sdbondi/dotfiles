@@ -109,6 +109,7 @@ Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'wakatime/vim-wakatime'
 Bundle 'rorymckinley/vim-rubyhash'
 Bundle 'marijnh/tern_for_vim'
+Bundle 'mxw/vim-jsx'
 " Bundle 'Valloric/YouCompleteMe'
 " }
 "

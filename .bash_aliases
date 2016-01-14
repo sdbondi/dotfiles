@@ -64,3 +64,6 @@ alias ltdgtun='ssh -NL36666:lovetodogood.org.za:36666 lovetodogood@lovetodogood.
 
 alias xclipf='xclip -sel clip <'
 
+# React Native
+alias rn=react-native
+

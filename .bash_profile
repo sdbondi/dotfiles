@@ -12,3 +12,6 @@ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
 # export EC2_HOME=$HOME/.bin/ec2_tools/
 # export PATH=$PATH:$EC2_HOME/bin
+
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"

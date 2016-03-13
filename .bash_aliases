@@ -48,7 +48,7 @@ alias android-connect="mtpfs -o allow_other /media/nexus4"
 alias android-disconnect="fusermount -u /media/nexus4"
 
 # VIM
-alias vim='vim --servername VIM'
+alias v='vim'
 
 # Docker
 alias dr=docker

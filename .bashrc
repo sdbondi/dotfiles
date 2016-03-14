@@ -162,3 +162,5 @@ fi
 export GOPATH=${GOPATH:-$HOME/.golang}
 export PATH=$PATH:$HOME/applications/Android/android-studio/bin:$HOME/applications/Android/Sdk/platform-tools:$HOME/applications/Android/Sdk/tools
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh" # This loads nvm

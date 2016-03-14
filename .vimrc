@@ -203,7 +203,7 @@ map <leader>qv :qall<CR>
 map <leader>. :noh<CR>
 map <leader>n :NERDTreeTabsToggle<CR>
 map <leader>ff :NERDTreeFind<CR>
-map <leader>na :!nautilus .<CR><CR>
+map <leader>na :!nemo .<CR><CR>
 map <leader>s :set syntax=
 
 " paste, fix indentation and clear the mark by default

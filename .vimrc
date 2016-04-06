@@ -112,6 +112,8 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
 Bundle 'joonty/vdebug.git'
+Bundle 'slim-template/vim-slim'
+Bundle 'Yggdroot/indentLine'
 " Bundle 'Valloric/YouCompleteMe'
 " }
 "
@@ -145,6 +147,21 @@ let g:ctrlp_max_height = 25
 let g:ctrlp_show_hidden = 1 " ensure ctrlp lists hidden files "
 let g:ctrl_custom_ignore = 'public/uploads/.*'
 
+" VDebug
+let g:vdebug_keymap = {
+  \    "run" : "<Leader><F5>",
+  \    "run_to_cursor" : "<F9>",
+  \    "step_over" : "<F2>",
+  \    "step_into" : "<F3>",
+  \    "step_out" : "<F4>",
+  \    "close" : "<F6>",
+  \    "detach" : "<F7>",
+  \    "set_breakpoint" : "<F10>",
+  \    "get_context" : "<F11>",
+  \    "eval_under_cursor" : "<F12>",
+  \    "eval_visual" : "<Leader>e",
+  \}
+
 " Go Lang
 let g:go_fmt_command = "gofmt"
 
@@ -166,6 +183,13 @@ let g:vim_markdown_folding_disabled=1
 let g:yankstack_map_keys = 0
 nmap <A-p> <Plug>yankstack_substitute_older_paste
 nmap <A-P> <Plug>yankstack_substitute_newer_paste
+
+" indentLine
+let g:indentLine_color_term = 237
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
+
+" Ruby makros
 
 " Ruby makros
 let @d = 'Orequire "pry-byebug";binding.pry'

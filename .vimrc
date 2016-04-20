@@ -113,7 +113,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
 Bundle 'joonty/vdebug.git'
 Bundle 'slim-template/vim-slim'
-Bundle 'Yggdroot/indentLine'
+" Bundle 'Yggdroot/indentLine'
 " Bundle 'Valloric/YouCompleteMe'
 " }
 "
@@ -185,9 +185,9 @@ nmap <A-p> <Plug>yankstack_substitute_older_paste
 nmap <A-P> <Plug>yankstack_substitute_newer_paste
 
 " indentLine
-let g:indentLine_color_term = 237
-let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_leadingSpaceChar = '·'
+" let g:indentLine_color_term = 237
+" let g:indentLine_leadingSpaceEnabled = 1
+" let g:indentLine_leadingSpaceChar = '·'
 
 " Ruby makros
 

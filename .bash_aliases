@@ -53,6 +53,7 @@ alias vim='vim --servername VIM'
 
 # Docker
 alias dr=docker
+alias dc=docker-compose
 alias drst='cat .dev-containers | xargs docker start'
 
 # Vagrant

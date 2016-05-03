@@ -141,7 +141,7 @@ md() {
 
 PATH="$PATH:$HOME/.bin"
 PATH="$HOME/.bin/jdk1.8.0_77/bin:$PATH"
-JAVA_HOME="$HOME/.bin/jdk1.8.0_77"
+JAVA_HOME="$HOME/.bin/jdk1.8.0_77/jre"
 
 # NPM / NODE
 PATH="$PATH:$HOME/.npm/bin"

@@ -11,5 +11,11 @@ function clean_linux_kernels() {
 }
 
 function killprt() {
-  netstat -nlp 2> /dev/null | grep $1 | tr -s ' ' | cut -d " " -f 7 | cut -d "/" -f 1 | xargs kill -9
+  DIE=$(netstat -nlp 2> /dev/null | grep $1 | tr -s ' ' | cut -d " " -f 7)
+  if [[ -z "$DIE" ]];then
+    echo "No process found."
+  else
+    echo "Killing $DIE"
+    echo $DIE | cut -d "/" -f 1 | xargs kill -9
+  fi
 }

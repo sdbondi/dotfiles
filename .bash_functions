@@ -11,7 +11,7 @@ function clean_linux_kernels() {
 }
 
 function killprt() {
-  DIE=$(netstat -nlp 2> /dev/null | grep $1 | tr -s ' ' | cut -d " " -f 7)
+  DIE=$(netstat -nlp 2> /dev/null | grep ^tcp | grep $1 | tr -s ' ' | cut -d " " -f 7)
   if [[ -z "$DIE" ]];then
     echo "No process found."
   else

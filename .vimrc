@@ -91,7 +91,8 @@ Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'guns/vim-clojure-static'
@@ -114,6 +115,7 @@ Bundle 'mxw/vim-jsx'
 Bundle 'joonty/vdebug.git'
 Bundle 'slim-template/vim-slim'
 Bundle 'digitaltoad/vim-pug'
+
 " Bundle 'Yggdroot/indentLine'
 " Bundle 'Valloric/YouCompleteMe'
 " }
@@ -142,7 +144,6 @@ let g:Powerline_symbols = 'fancy'
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let g:nerdtree_tabs_open_on_console_startup = 1
-let g:syntastic_check_on_open=1
 " Ctrl P
 let g:ctrlp_max_height = 25
 let g:ctrlp_show_hidden = 1 " ensure ctrlp lists hidden files "
@@ -162,6 +163,14 @@ let g:vdebug_keymap = {
   \    "eval_under_cursor" : "<F12>",
   \    "eval_visual" : "<Leader>e",
   \}
+
+  " Syntastic {
+    let g:syntastic_check_on_open=1
+  " }
+
+  " Vim JSX {
+    let g:jsx_ext_required = 0
+  " }
 
 " Go Lang
 let g:go_fmt_command = "gofmt"
@@ -268,6 +277,14 @@ map <Leader>q' gewi'<Esc>ea'<Esc>
 " Delete quotes around word
 map <Leader>qd BxEx
 " daW"=substitute(@@,"'\\\|\"","","g")<CR>P
+"
+  " Airline {
+    let g:airline_theme='bubblegum'
+    let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#enabled = 1
+  " }
+
+
 
 " C++ mappings {
 " Save, compile and run c program

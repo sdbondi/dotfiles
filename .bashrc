@@ -206,3 +206,5 @@ elif type compctl &>/dev/null; then
 fi
 ###-end-pm2-completion-###
 PATH=$PATH:/usr/local/android-studio/bin
+
+source ~/.git-subrepo/.rc

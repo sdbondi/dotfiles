@@ -31,4 +31,4 @@ chmod -X ~/code/git-completion/git-completion.bash
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 
-
+git clone https://github.com/ingydotnet/git-subrepo ~/.git-subrepo

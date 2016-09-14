@@ -45,7 +45,7 @@ set noswapfile
 set nobackup
 set nowritebackup
 set nowrap
-set colorcolumn=85 " show column length hint for long lines
+set colorcolumn=101 " show column length hint for long lines
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set tags=./tags;~/Projects
 

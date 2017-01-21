@@ -1,11 +1,11 @@
 alias nemacs='emacs -nw'
 alias semacs='sudo emacs -nw'
 
-alias aptse='aptitude search'
+alias aptse='apt search'
 alias aptin='sudo aptdcon -i'
-alias aptre='sudo aptitude remove'
-alias aptupd='sudo aptitude update'
-alias aptupg='sudo aptitude upgrade'
+alias aptre='sudo apt remove'
+alias aptupd='sudo apt update'
+alias aptupg='sudo apt upgrade'
 
 alias isit='ps -e | grep -i'
 

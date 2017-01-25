@@ -14,6 +14,8 @@ alias say='espeak -v en '
 
 alias ..='cd ..'
 
+alias ff='xdg-open . > /dev/null'
+
 # Make sure git autocomplete works for alias
 complete -o default -o nospace -F _git g
 

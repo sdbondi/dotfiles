@@ -237,7 +237,7 @@ map <leader>qv :qall<CR>
 map <leader>. :noh<CR>
 map <leader>n :NERDTreeTabsToggle<CR>
 map <leader>ff :NERDTreeFind<CR>
-map <leader>na :!pantheon-files -d `pwd`<CR><CR>
+map <leader>na :!xdg-open . > /dev/null<CR><CR>
 map <leader>s :set syntax=
 
 " paste, fix indentation and clear the mark by default

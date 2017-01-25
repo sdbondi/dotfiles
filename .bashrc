@@ -179,4 +179,4 @@ if [ -f /home/stan/.bin/google-cloud-sdk/completion.bash.inc ]; then
   source '/home/stan/.bin/google-cloud-sdk/completion.bash.inc'
 fi
 
-eval `keychain --eval $HOME/.ssh/id_rsa 1> /dev/null 2>&1`
+# eval `keychain --eval $HOME/.ssh/id_rsa 1> /dev/null 2>&1`

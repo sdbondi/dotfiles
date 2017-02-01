@@ -115,6 +115,7 @@ Bundle 'mxw/vim-jsx'
 Bundle 'joonty/vdebug.git'
 Bundle 'slim-template/vim-slim'
 Bundle 'digitaltoad/vim-pug'
+Bundle 'itspriddle/ZoomWin'
 
 " Bundle 'Yggdroot/indentLine'
 " Bundle 'Valloric/YouCompleteMe'

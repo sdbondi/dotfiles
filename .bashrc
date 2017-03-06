@@ -160,7 +160,7 @@ if [[ -f ~/.bin/autoenv/activate.sh ]]; then
 fi
 
 [[ -s "/home/stan/.gvm/scripts/gvm" ]] && source "/home/stan/.gvm/scripts/gvm"
-export GOPATH=${GOPATH:-$HOME/.golang}
+export GOROOT=${GOROOT:-$HOME/.bin/golib}
 export PATH=$PATH:$HOME/applications/Android/android-studio/bin:$HOME/applications/Android/Sdk/platform-tools:$HOME/applications/Android/Sdk/tools
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export NVM_DIR="$HOME/.nvm"

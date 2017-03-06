@@ -180,3 +180,7 @@ if [ -f /home/stan/.bin/google-cloud-sdk/completion.bash.inc ]; then
 fi
 
 # eval `keychain --eval $HOME/.ssh/id_rsa 1> /dev/null 2>&1`
+
+export PATH=$PATH:/home/stan/.bin
+
+source '/home/stan/.bin/azure-cli/az.completion'

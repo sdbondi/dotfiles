@@ -170,13 +170,13 @@ PATH=$PATH:/usr/local/android-studio/bin
 source ~/.git-subrepo/.rc
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f /home/stan/.bin/google-cloud-sdk/path.bash.inc ]; then
-  source '/home/stan/.bin/google-cloud-sdk/path.bash.inc'
+if [ -f $HOME/.bin/google-cloud-sdk/path.bash.inc ]; then
+  source "$HOME/.bin/google-cloud-sdk/path.bash.inc"
 fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f /home/stan/.bin/google-cloud-sdk/completion.bash.inc ]; then
-  source '/home/stan/.bin/google-cloud-sdk/completion.bash.inc'
+if [ -f $HOME/.bin/google-cloud-sdk/completion.bash.inc ]; then
+  source "$HOME/.bin/google-cloud-sdk/completion.bash.inc"
 fi
 
 # eval `keychain --eval $HOME/.ssh/id_rsa 1> /dev/null 2>&1`
@@ -184,3 +184,7 @@ fi
 export PATH=$PATH:/home/stan/.bin
 
 source '/home/stan/.bin/azure-cli/az.completion'
+
+if [ -f $HOME/.dronerc ]; then
+  source $HOME/.dronerc
+fi

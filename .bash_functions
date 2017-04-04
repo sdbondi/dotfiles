@@ -19,3 +19,7 @@ function killprt() {
     echo $DIE | cut -d "/" -f 1 | xargs kill -9
   fi
 }
+
+function htngrok() {
+  ngrok http $1 --region eu
+}

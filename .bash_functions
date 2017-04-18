@@ -20,6 +20,6 @@ function killprt() {
   fi
 }
 
-function htngrok() {
+function ngrokhttp() {
   ngrok http $1 --region eu
 }

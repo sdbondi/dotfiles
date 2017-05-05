@@ -175,6 +175,11 @@ let g:vdebug_keymap = {
 
 " Go Lang
 let g:go_fmt_command = "gofmt"
+" Emmet {
+let g:user_emmet_settings = {  'javascript' : { 'extends' : 'jsx'  }}
+" }
+
+
 
 " Ruby hash
 let g:rubyhash_map_keys=0

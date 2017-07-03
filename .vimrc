@@ -116,6 +116,8 @@ Bundle 'joonty/vdebug.git'
 Bundle 'slim-template/vim-slim'
 Bundle 'digitaltoad/vim-pug'
 Bundle 'itspriddle/ZoomWin'
+Bundle 'elmcast/elm-vim'
+Bundle 'mitermayer/vim-prettier'
 
 " Bundle 'Yggdroot/indentLine'
 " Bundle 'Valloric/YouCompleteMe'
@@ -150,7 +152,7 @@ let g:ctrlp_max_height = 25
 let g:ctrlp_show_hidden = 1 " ensure ctrlp lists hidden files "
 let g:ctrl_custom_ignore = 'public/uploads/.*'
 
-" VDebug
+" VDebug {
 let g:vdebug_keymap = {
   \    "run" : "<Leader><F5>",
   \    "run_to_cursor" : "<F9>",
@@ -164,9 +166,27 @@ let g:vdebug_keymap = {
   \    "eval_under_cursor" : "<F12>",
   \    "eval_visual" : "<Leader>e",
   \}
+" }
 
   " Syntastic {
     let g:syntastic_check_on_open=1
+  " }
+
+  " ELM {
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+
+    let g:elm_syntastic_show_warnings = 1
+    let g:elm_format_autosave = 1
+  " }
+
+
+  " Prettier {
+    let g:prettier#config#trailing_comma = 'es5'
+
+    " let g:prettier#quickfix_enabled = 0
+    let g:prettier#autoformat = 0
+    autocmd BufWritePre *.js,*.json,*.css PrettierAsync
   " }
 
   " Vim JSX {

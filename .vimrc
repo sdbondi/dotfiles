@@ -9,7 +9,7 @@
 " " }"
 
 " Environment {
-filetype plugin indent on
+filetype off
 
 set t_Co=256
 colorscheme grb256
@@ -69,60 +69,61 @@ autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 " }
 
-" Bundle setup {
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+" Packages {
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/vundle'
 
-Bundle 'rking/ag.vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-surround'
-Bundle 'Raimondi/delimitMate'
-Bundle 'adamlowe/vim-slurper'
-Bundle 'kien/ctrlp.vim'
-Bundle 'ervandew/supertab'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'ddollar/nerdcommenter'
-Bundle 'tpope/vim-endwise'
-Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
-Bundle 'godlygeek/tabular'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'guns/vim-clojure-static'
-Bundle 'tpope/vim-fireplace'
-Bundle 'jwhitley/vim-matchit'
-Bundle 'mattn/emmet-vim'
-Bundle 'honza/dockerfile.vim'
-" Bundle 'astashov/vim-ruby-debugger'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'plasticboy/vim-markdown'
-Bundle 't9md/vim-ruby-xmpfilter'
-Bundle 'fatih/vim-go'
-Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle 'wakatime/vim-wakatime'
-Bundle 'rorymckinley/vim-rubyhash'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'mxw/vim-jsx'
-Bundle 'joonty/vdebug.git'
-Bundle 'slim-template/vim-slim'
-Bundle 'digitaltoad/vim-pug'
-Bundle 'itspriddle/ZoomWin'
-Bundle 'elmcast/elm-vim'
-Bundle 'mitermayer/vim-prettier'
+Plugin 'rking/ag.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-surround'
+Plugin 'Raimondi/delimitMate'
+Plugin 'adamlowe/vim-slurper'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ervandew/supertab'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'ddollar/nerdcommenter'
+Plugin 'tpope/vim-endwise'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'godlygeek/tabular'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+Plugin 'jwhitley/vim-matchit'
+Plugin 'mattn/emmet-vim'
+Plugin 'honza/dockerfile.vim'
+" Plugin 'astashov/vim-ruby-debugger'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'plasticboy/vim-markdown'
+Plugin 't9md/vim-ruby-xmpfilter'
+Plugin 'fatih/vim-go'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'rorymckinley/vim-rubyhash'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'joonty/vdebug.git'
+Plugin 'slim-template/vim-slim'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'itspriddle/ZoomWin'
+Plugin 'elmcast/elm-vim'
+Plugin 'mitermayer/vim-prettier'
 
-" Bundle 'Yggdroot/indentLine'
-" Bundle 'Valloric/YouCompleteMe'
+call vundle#end()
 " }
 "
+filetype plugin indent on
+
 " Vim-Ruby Xmpfilter {
 " autocmd FileType ruby nmap <buffer> mm <Plug>(xmpfilter-mark)
 " autocmd FileType ruby xmap <buffer> mm <Plug>(xmpfilter-mark)
@@ -276,8 +277,8 @@ nmap <leader>bx :!bundle exec<space>
 nmap <leader>zx :!zeus<space>
 nmap <silent> ,/ :nohlsearch<CR> " quickly remove highlighted searches
 
-map <leader>vbi :BundleInstall<CR>
-map <leader>vbu :BundleUpdate<CR>
+map <leader>vbi :PluginInstall<CR>
+map <leader>vbu :PluginUpdate<CR>
 
 map <leader>bi :!bundle<CR>
 map <leader>bu :!bundle update<space>

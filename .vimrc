@@ -416,17 +416,6 @@ command! Qall qall
 command! W w
 command! Wa wall
 
-" deprecated? must check new docs.
-autocmd User Rails Rnavcommand presenter app/presenters -glob=**/* -suffix=.rb
-
-" Set up some useful Rails.vim bindings for working with Backbone.js
-autocmd User Rails Rnavcommand template    app/assets/templates               -glob=**/*  -suffix=.jst.ejs
-autocmd User Rails Rnavcommand jmodel      app/assets/javascripts/models      -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jview       app/assets/javascripts/views       -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jcollection app/assets/javascripts/collections -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jrouter     app/assets/javascripts/routers     -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jspec       spec/javascripts                   -glob=**/*  -suffix=.coffee
-
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 " Source: https://github.com/thoughtbot/dotfiles/blob/master/vimrc
 if executable('ag')

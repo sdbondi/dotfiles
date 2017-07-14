@@ -31,6 +31,7 @@ set fillchars+=vert:\
 let mapleader=","
 set number
 set ignorecase
+set nowrap
 set noswapfile
 set completeopt=longest,menuone
 

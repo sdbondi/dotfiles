@@ -87,6 +87,34 @@ if executable('ag')
 endif
 " }
 
+" Git (fugitive) mappings {
+ " git push
+ nmap <leader>gp :exec ':Git push origin ' . fugitive#head()<CR>
+
+ " git pull
+ nmap <leader>gl :exec ':Git pull origin ' . fugitive#head()<CR>
+
+  " git push to heroku
+  nmap <leader>ghp :exec ':Git push heroku ' . fugitive#head()<CR>
+
+  " git status
+  map <silent> <leader>gs :Gstatus<CR>/not staged<CR>/modified<CR>
+
+  " git commit -am "
+  map <leader>gci :Git commit -am "
+  map <leader>gaci :!git add --all . && git commit -m "
+
+  " git checkout
+  map <leader>gco :Git checkout
+
+  " git diff
+  map <leader>gd :Gdiff<CR>
+
+  " git gui
+  map <leader>ggui :!git cola > /dev/null 2>&1 &<CR><CR>
+  map <leader>gw :!git add . && git commit -m "WIP"
+" }
+
 
 " Leader Mappings
 map <leader>qv :qall<CR>

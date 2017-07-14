@@ -1,6 +1,8 @@
 " Plugins
 call plug#begin()
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
@@ -19,6 +21,7 @@ Plug 'bfredl/nvim-miniyank'
 Plug 'ervandew/supertab'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
+
 call plug#end()
 
 " General

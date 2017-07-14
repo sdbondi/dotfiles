@@ -95,3 +95,7 @@ nmap <leader>fp :let @+ = expand("%:p")<CR>
 map <leader>vi :tabe ~/.config/nvim/init.vim<CR>
 map <leader>vs :source ~/.config/nvim/init.vim<CR>
 map <leader>fj :%!python -m json.tool<CR>
+
+" Alt Mappings
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==

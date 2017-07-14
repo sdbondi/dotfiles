@@ -34,6 +34,7 @@ set ignorecase
 set nowrap
 set noswapfile
 set completeopt=longest,menuone
+set colorcolumn=101 " show column length hint for long lines
 
 " Gruvbox
 set background=dark

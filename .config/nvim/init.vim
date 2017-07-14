@@ -43,9 +43,9 @@ let g:airline_left_sep= '░'
 let g:airline_right_sep= '░'
 
 " NerdTree
-map <LEADER>f :NERDTreeToggle<CR>
 let g:NERDTreeWinSize = 24
 let g:NERDTreeMinimalUI = 1
+map <LEADER>f :NERDTreeToggle<CR>
 autocmd VimEnter * if (0 == argc()) | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 

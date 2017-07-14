@@ -53,7 +53,7 @@ alias android-disconnect="fusermount -u /media/nexus4"
 alias phpcomposer='php $HOME/.bin/composer.phar'
 
 # VIM
-alias v='vim'
+alias v='nvim'
 
 # tmux
 alias mux='tmuxinator'

@@ -94,9 +94,6 @@ endif
  " git pull
  nmap <leader>gl :exec ':Git pull origin ' . fugitive#head()<CR>
 
-  " git push to heroku
-  nmap <leader>ghp :exec ':Git push heroku ' . fugitive#head()<CR>
-
   " git status
   map <silent> <leader>gs :Gstatus<CR>/not staged<CR>/modified<CR>
 

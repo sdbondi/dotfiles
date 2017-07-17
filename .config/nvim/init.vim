@@ -1,7 +1,8 @@
 " Plugins
 call plug#begin()
-Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
@@ -21,6 +22,7 @@ Plug 'bfredl/nvim-miniyank'
 Plug 'ervandew/supertab'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'mileszs/ack.vim' " Basically Silver searcher
 
 call plug#end()
 
@@ -76,6 +78,11 @@ nmap <A-p> <Plug>(miniyank-cycle)
 let g:ctrlp_max_height = 25
 let g:ctrlp_show_hidden = 1 " ensure ctrlp lists hidden files "
 
+" Ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 " Source: https://github.com/thoughtbot/dotfiles/blob/master/vimrc
 if executable('ag')
@@ -116,7 +123,7 @@ endif
 " Leader Mappings
 map <leader>qv :qall<CR>
 map <leader>. :noh<CR>
-map <leader>n :NERDTreeTabsToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 map <leader>ff :NERDTreeFind<CR>
 map <leader>na :!xdg-open . > /dev/null<CR><CR>
 map <leader>s :set syntax=

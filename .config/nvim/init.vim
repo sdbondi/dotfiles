@@ -13,9 +13,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['javascript.jsx', 'html', 'css'] }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'mattn/emmet-vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'fatih/vim-go'
 Plug 'bfredl/nvim-miniyank'
@@ -26,7 +25,7 @@ Plug 'mileszs/ack.vim' " Basically Silver searcher
 
 call plug#end()
 
-" General
+" General {
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 set fillchars+=vert:\
@@ -37,52 +36,78 @@ set nowrap
 set noswapfile
 set completeopt=longest,menuone
 set colorcolumn=101 " show column length hint for long lines
+" }
 
-" Gruvbox
+" Gruvbox {
 set background=dark
 colorscheme gruvbox
+" }
 
-" Airline
+" Airline {
 let g:airline_left_sep= '░'
 let g:airline_right_sep= '░'
+" }
 
-" NerdTree
+" NerdTree {
 let g:NERDTreeWinSize = 24
 let g:NERDTreeMinimalUI = 1
 map <LEADER>f :NERDTreeToggle<CR>
 autocmd VimEnter * if (0 == argc()) | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" }
 
-" Syntastic
+" Syntastic {
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:airline#extensions#syntastic#enabled = 0
+" }
 
-" Elm
+" Elm {
 let g:polyglot_disabled = ['elm']
 let g:elm_detailed_complete = 1
 let g:elm_format_autosave = 1
 let g:elm_syntastic_show_warnings = 1
+" }
 
-" Markdown
+" Markdown {
 autocmd BufNewFile,BufRead *.md set spell | set lbr | set nonu
 let g:markdown_fenced_languages = ['html', 'json', 'css', 'javascript', 'elm', 'vim']
+" }
 
-" MiniYank
+" MiniYank {
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 nmap <A-p> <Plug>(miniyank-cycle)
+" }
 
 " Ctrlp {
 let g:ctrlp_max_height = 25
 let g:ctrlp_show_hidden = 1 " ensure ctrlp lists hidden files "
+" }
 
-" Ack.vim
+" Ack.vim {
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+" }
 
+" Emmet {
+let g:user_emmet_install_global = 0
+
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends' : 'jsx',
+\  },
+\  'javascript' : {
+\      'extends' : 'jsx',
+\  },
+\}
+
+autocmd FileType html,css,javascript.jsx EmmetInstall
+" }
+
+" SilverSearcher {
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 " Source: https://github.com/thoughtbot/dotfiles/blob/master/vimrc
 if executable('ag')
@@ -120,7 +145,7 @@ endif
 " }
 
 
-" Leader Mappings
+" Leader Mappings {
 map <leader>qv :qall<CR>
 map <leader>. :noh<CR>
 map <leader>n :NERDTreeToggle<CR>
@@ -132,7 +157,10 @@ nmap <leader>fp :let @+ = expand("%:p")<CR>
 map <leader>vi :tabe ~/.config/nvim/init.vim<CR>
 map <leader>vs :source ~/.config/nvim/init.vim<CR>
 map <leader>fj :%!python -m json.tool<CR>
+" }
 
-" Alt Mappings
+" Alt Mappings {
 nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
+nnoremap <A-k> :m .-2<CR>=
+" }
+

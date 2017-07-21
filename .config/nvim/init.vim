@@ -161,6 +161,6 @@ map <leader>fj :%!python -m json.tool<CR>
 
 " Alt Mappings {
 nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>=
+nnoremap <A-k> :m .-2<CR>==
 " }
 

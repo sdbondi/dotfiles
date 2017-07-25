@@ -164,3 +164,7 @@ nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 " }
 
+" Makros {
+" Ruby
+let @d = 'Orequire "pry-byebug";binding.pry'
+" }

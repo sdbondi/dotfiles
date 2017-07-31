@@ -1,16 +1,9 @@
 export PATH=$PATH:$HOME/.bin
-export RBENV_ROOT="${HOME}/.rbenv"
-
-if [ -d "${RBENV_ROOT}" ]; then
-  export PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init -)"
-fi
-
-# export RBENV_VERSION=2.1.0 # rbx-2.2.1
-
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+# set PATH so it includes user's private bin directories
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
-# export EC2_HOME=$HOME/.bin/ec2_tools/
-# export PATH=$PATH:$EC2_HOME/bin
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
-# ssh-agent bash
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

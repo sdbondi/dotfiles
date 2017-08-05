@@ -13,7 +13,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'mattn/emmet-vim', { 'for': ['javascript.jsx', 'html', 'css'] }
+Plug 'mattn/emmet-vim', { 'for': ['javascript.jsx', 'html', 'css', 'scss'] }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'fatih/vim-go'
@@ -105,7 +105,7 @@ let g:user_emmet_settings = {
 \  },
 \}
 
-autocmd FileType html,css,javascript.jsx EmmetInstall
+autocmd FileType html,css,scss,javascript.jsx EmmetInstall
 " }
 
 " SilverSearcher {

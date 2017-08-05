@@ -36,6 +36,7 @@ set nowrap
 set noswapfile
 set completeopt=longest,menuone
 set colorcolumn=101 " show column length hint for long lines
+set mouse=a
 " }
 
 " Gruvbox {

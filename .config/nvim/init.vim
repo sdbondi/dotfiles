@@ -158,6 +158,8 @@ nmap <leader>fp :let @+ = expand("%:p")<CR>
 map <leader>vi :tabe ~/.config/nvim/init.vim<CR>
 map <leader>vs :source ~/.config/nvim/init.vim<CR>
 map <leader>fj :%!python -m json.tool<CR>
+vnoremap <leader>b64e y:let @"=system('base64 --wrap 0', @")<cr>gvP
+vnoremap <leader>b64d y:let @"=system('base64 --decode', @")<cr>gvP
 " }
 
 " Alt Mappings {

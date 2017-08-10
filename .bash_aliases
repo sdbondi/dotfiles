@@ -76,3 +76,5 @@ alias xclipf='xclip -sel clip <'
 # React Native
 alias rn=react-native
 
+# Kubernetes
+alias k=kubectl

@@ -3,8 +3,8 @@ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
 
 
 # set PATH so it includes user's private bin directories

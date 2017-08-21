@@ -31,6 +31,7 @@ set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 set fillchars+=vert:\
 let mapleader=","
 set number
+set relativenumber
 set ignorecase
 set nowrap
 set noswapfile
@@ -158,6 +159,7 @@ nmap <leader>fp :let @+ = expand("%:p")<CR>
 map <leader>vi :tabe ~/.config/nvim/init.vim<CR>
 map <leader>vs :source ~/.config/nvim/init.vim<CR>
 map <leader>fj :%!python -m json.tool<CR>
+map <leader>ft :set ft=
 vnoremap <leader>b64e y:let @"=system('base64 --wrap 0', @")<cr>gvP
 vnoremap <leader>b64d y:let @"=system('base64 --decode', @")<cr>gvP
 " }

@@ -75,6 +75,7 @@ let g:elm_syntastic_show_warnings = 1
 " Markdown {
 autocmd BufNewFile,BufRead *.md set spell | set lbr | set nonu
 let g:markdown_fenced_languages = ['html', 'json', 'css', 'javascript', 'elm', 'vim']
+let g:vim_markdown_folding_disabled=1
 " }
 
 " MiniYank {

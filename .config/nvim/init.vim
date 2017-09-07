@@ -22,6 +22,9 @@ Plug 'ervandew/supertab'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mileszs/ack.vim' " Basically Silver searcher
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
 call plug#end()
 
@@ -38,6 +41,37 @@ set noswapfile
 set completeopt=longest,menuone
 set colorcolumn=101 " show column length hint for long lines
 set mouse=a
+" }
+
+" Prettier {
+" max line lengh that prettier will wrap on
+let g:prettier#config#print_width = 100
+
+" number of spaces per indentation level
+let g:prettier#config#tab_width = 2
+
+" use tabs over spaces
+let g:prettier#config#use_tabs = 'false'
+
+" print semicolons
+let g:prettier#config#semi = 'true'
+
+" single quotes over double quotes
+let g:prettier#config#single_quote = 'true'
+
+" print spaces between brackets
+let g:prettier#config#bracket_spacing = 'false'
+
+" put > on the last line instead of new line
+let g:prettier#config#jsx_bracket_same_line = 'true'
+
+" none|es5|all
+let g:prettier#config#trailing_comma = 'all'
+
+" flow|babylon|typescript|postcss|json|graphql
+let g:prettier#config#parser = 'flow'
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier
 " }
 
 " Gruvbox {

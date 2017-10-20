@@ -78,3 +78,4 @@ alias rn=react-native
 
 # Kubernetes
 alias k=kubectl
+alias kscc='kubectl config set current-context'

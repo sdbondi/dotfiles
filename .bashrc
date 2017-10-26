@@ -191,3 +191,6 @@ fi
 
 # Bash profile
 source ~/.bash_profile
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash

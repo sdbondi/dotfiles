@@ -138,8 +138,7 @@ md() {
 }
 
 PATH="$PATH:$HOME/.bin"
-PATH="$HOME/.bin/jdk1.8.0_77/bin:$PATH"
-JAVA_HOME="$HOME/.bin/jdk1.8.0_77"
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 
 # NPM / NODE
 PATH="$PATH:$HOME/.npm/bin"
@@ -194,3 +193,8 @@ source ~/.bash_profile
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+export PATH="/home/stan/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+

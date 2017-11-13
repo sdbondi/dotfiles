@@ -23,6 +23,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mileszs/ack.vim' " Basically Silver searcher
 Plug 'elixir-editors/vim-elixir'
+Plug 'sebdah/vim-delve'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }

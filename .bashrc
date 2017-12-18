@@ -138,7 +138,7 @@ md() {
 }
 
 PATH="$PATH:$HOME/.bin"
-JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # NPM / NODE
 PATH="$PATH:$HOME/.npm/bin"

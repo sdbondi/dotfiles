@@ -104,8 +104,8 @@ function gitmergedev() {
     if [ ! -d .git ]; then
 	git rev-parse --git-dir 2> /dev/null
 	if [ $? -ne 0 ];then
-	    echo 'Not in GIT directory.'
-	    return 1
+			echo 'Not in GIT directory.'
+			return 1
 	fi
     fi
 
@@ -138,7 +138,6 @@ md() {
 }
 
 PATH="$PATH:$HOME/.bin"
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # NPM / NODE
 PATH="$PATH:$HOME/.npm/bin"
@@ -161,8 +160,6 @@ export GOROOT=${GOROOT:-$HOME/.bin/golib}
 export GOPATH=$HOME/code/go
 export PATH=$PATH:$HOME/applications/Android/android-studio/bin:$HOME/applications/Android/Sdk/platform-tools:$HOME/applications/Android/Sdk/tools
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 PATH=$PATH:/usr/local/android-studio/bin
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 

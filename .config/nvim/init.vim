@@ -70,7 +70,7 @@ let g:prettier#config#jsx_bracket_same_line = 'true'
 " none|es5|all
 let g:prettier#config#trailing_comma = 'es5'
 
-let g:prettier#exec_cmd_path = "~/.nvm/versions/node/v6.3.1/bin/prettier"
+let g:prettier#exec_cmd_path = "~/.nvm/versions/node/v8.9.10/bin/prettier"
 
 " flow|babylon|typescript|postcss|json|graphql
 let g:prettier#config#parser = 'flow'

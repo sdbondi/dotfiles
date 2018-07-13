@@ -23,8 +23,12 @@ complete -o default -o nospace -F _git g
 alias irb='irb --readline -r irb/completion'
 alias rii='ri -Tf ansi'
 
-# Node
-alias mtr='meteor'
+# NPM
+alias ni='npm install'
+alias nr='npm run'
+alias nrm='npm remove'
+alias nrc='npm run commit'
+alias nig='npm install -g'
 
 # RBENV
 alias rbe='rbenv'

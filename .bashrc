@@ -195,3 +195,4 @@ source ~/.bash_profile
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
 
+export PATH=/home/stan/.local/bin/luna-studio:$PATH

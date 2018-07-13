@@ -25,10 +25,11 @@ alias rii='ri -Tf ansi'
 
 # NPM
 alias ni='npm install'
+alias nid='npm install -D'
+alias nig='npm install -g'
 alias nr='npm run'
 alias nrm='npm remove'
 alias nrc='npm run commit'
-alias nig='npm install -g'
 
 # RBENV
 alias rbe='rbenv'

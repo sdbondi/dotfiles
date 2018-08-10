@@ -186,7 +186,7 @@ if [ -f $HOME/.dronerc ]; then
 fi
 
 # Bash profile
-source ~/.bash_profile
+#source ~/.bash_profile
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

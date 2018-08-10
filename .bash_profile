@@ -7,6 +7,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+source ~/.bashrc
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

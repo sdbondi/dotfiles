@@ -1,0 +1,36 @@
+{
+  "files.autoSave": "off",
+  "keyboard.dispatch": "keyCode",
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.bracketSpacing": false,
+  "prettier.ignorePath": ".prettierignore",
+  "prettier.printWidth": 100,
+  "editor.multiCursorModifier": "alt",
+  "vim.disableExtension": false,
+  "editor.lineNumbers": "relative",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "explorer.confirmDelete": false,
+  "lldb.executable": "lldb-6.0",
+  "workbench.colorTheme": "Monokai",
+  "explorer.confirmDragAndDrop": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": 0,
+  "emmet.syntaxProfiles": {
+    "javascript": "html"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "vim.leader": ",",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-k>": false
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "[markdown]": {
+    "editor.wordWrap": "off",
+    "editor.quickSuggestions": false
+  }
+}

@@ -1,4 +1,0 @@
-vimrc
-=====
-
-Vim setup

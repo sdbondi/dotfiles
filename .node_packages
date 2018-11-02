@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+function installmodule() {
+	if npm list -g "${@}" | grep "empty" > /dev/null; then
+		npm install -g "${@}"
+	else
+		echo "${@} is already installed."
+	fi
+}
+
+installmodule elm
+installmodule elm-format@exp
+installmodule elm-oracle
+installmodule elm-test
+installmodule feathers-cli
+installmodule gulp-cli
+installmodule imageoptim-cli
+installmodule localtunnel
+installmodule ndb
+installmodule ngrok
+installmodule nodemon
+installmodule prettier
+installmodule server
+installmodule typescript
+installmodule yo

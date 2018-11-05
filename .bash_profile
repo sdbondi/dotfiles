@@ -1,7 +1,7 @@
 # Add homebrew's installs to the `$PATH` before non-Homebrew things
 export PATH="/usr/local/bin:$PATH"
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 # Add `~/.local/bin` to the `$PATH` for Haskell Tool Stack
 export PATH="$HOME/.local/bin:$PATH"
 # Add Google's depot_tools for adding Chrome to iOS Simulator to path

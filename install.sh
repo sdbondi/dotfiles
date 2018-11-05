@@ -3,7 +3,7 @@ cd "$(dirname "${BASH_SOURCE}")"
 
 rsync_dotfiles() {
   rsync --exclude ".git/" --exclude ".DS_Store" --exclude "install.sh" --exclude "deps.sh" \
-    --exclude "README.md" --exclude "LICENSE-MIT.txt" -av --no-perms . ~
+    --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude "install-deps.sh" -av --no-perms . ~
   source ~/.bash_profile
 }
 

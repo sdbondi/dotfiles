@@ -214,11 +214,14 @@
   map <leader>bp :bp<CR>
 
   " quick access to this .vimrc
-  map <leader>vi :tabe ~/dotfiles/.vimrc<CR>
+  map <leader>vi :tabe ~/code/dotfiles/.vimrc<CR>
   map <leader>vs :source ~/.vimrc<CR>
 
   " set all windows to equal width
   map <leader>= <C-w>=
+
+  " Quit
+  map <leader>qv :Qall<CR>
 " }
 
 " Auto Commands {

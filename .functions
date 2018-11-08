@@ -289,3 +289,17 @@ function killprt() {
     echo $DIE | cut -d "/" -f 1 | xargs kill -9
   fi
 }
+
+function genpasswd() {
+    local l=$1
+    [ "$l" == "" ] && l=16
+    LC_ALL=C tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
+}
+
+function ai2pdf() {
+  gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile="$1.pdf" "$1"
+}
+
+function ngrokhttp() {
+  ngrok http $1 --region eu
+}

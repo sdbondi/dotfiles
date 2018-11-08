@@ -40,10 +40,6 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
-if [ -f ~/.bash_functions ]; then
-	. ~/.bash_functions
-fi
-
 # init z   https://github.com/rupa/z
 if [ -f ~/code/z/z.sh ]; then
 	. ~/code/z/z.sh

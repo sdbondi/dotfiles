@@ -166,3 +166,4 @@ alias kscc='kubectl config set current-context'
 # Docker
 alias dr=docker
 alias dc=docker-compose
+alias preview="fzf --preview 'bat --color \"always\" {}'"

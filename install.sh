@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 cd "$(dirname "${BASH_SOURCE}")"
 
+RSYNC_ARGS=()
+if [[ "$1" == "--dry-run" ]];then
+  RSYNC_ARGS+="--dry-run"
+fi
+
 rsync_dotfiles() {
-  rsync --exclude ".git/" --exclude ".DS_Store" --exclude "install.sh" --exclude "deps.sh" \
+  rsync "${RSYNC_ARGS[@]}" --exclude ".git/" --exclude ".DS_Store" --exclude "install.sh" --exclude "deps.sh" \
     --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude "install-deps.sh" -av --no-perms . ~
   source ~/.bash_profile
 }

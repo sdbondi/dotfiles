@@ -27,7 +27,7 @@ fi
 export EDITOR="vim"
 
 # go lang
-export GOPATH=$HOME/golang
+export GOPATH=$HOME/code/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
@@ -88,3 +88,6 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# add support for ctrl+o to open selected file in VS Code / Substitute code with your editor of choice
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"

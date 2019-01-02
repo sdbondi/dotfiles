@@ -222,6 +222,14 @@
 
   " Quit
   map <leader>qv :Qall<CR>
+
+  " format JSON
+  map <leader>fj :%!python -m json.tool<CR>
+
+  " Base64
+  vnoremap <leader>b64e y:let @"=system('base64 --break=0', @")<cr>gvP
+  vnoremap <leader>b64d y:let @"=system('base64 --decode', @")<cr>gvP
+
 " }
 
 " Auto Commands {

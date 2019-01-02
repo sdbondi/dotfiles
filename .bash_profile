@@ -91,3 +91,4 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # add support for ctrl+o to open selected file in VS Code / Substitute code with your editor of choice
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
+[ -f ~/.fzf.bash  ] && source ~/.fzf.bash

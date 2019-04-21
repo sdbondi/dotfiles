@@ -47,6 +47,8 @@
   Bundle 'janko-m/vim-test'
   Bundle 'tpope/vim-dispatch'
   Bundle 'ternjs/tern_for_vim'
+  Bundle 'tpope/vim-abolish'
+  Bundle 'ekalinin/Dockerfile.vim'
 "}
 
 " General {
@@ -89,7 +91,7 @@
   set cursorline                                 " highlight current line
   hi CursorLine term=bold cterm=bold ctermbg=233
 
-  set colorcolumn=85                             " show column length hint for long lines
+  set colorcolumn=100                             " show column length hint for long lines
 
   set backspace=indent,eol,start                 " allow backspacing over everything in insert mode
   set linespace=0                                " No extra spaces between rows

@@ -32,6 +32,10 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+if [[ -f ~/.vars ]];then
+  source ~/.vars
+fi
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -92,3 +96,5 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # add support for ctrl+o to open selected file in VS Code / Substitute code with your editor of choice
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 [ -f ~/.fzf.bash  ] && source ~/.fzf.bash
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

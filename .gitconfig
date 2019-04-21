@@ -105,3 +105,11 @@
 [user]
 	name = Stanimal
 	email = sdbondi@users.noreply.github.com
+	signingkey = 73963C03A649FEB5
+[commit]
+	gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

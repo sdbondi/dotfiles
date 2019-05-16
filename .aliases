@@ -162,6 +162,7 @@ alias nrm='npm remove'
 # Kubernetes
 alias k=kubectl
 alias kscc='kubectl config set current-context'
+alias kx=kubectx
 
 # Docker
 alias dr=docker

@@ -170,4 +170,4 @@ alias dc=docker-compose
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 
 # Cargo
-alias ct=cargo test -- --nocapture
+alias ct='cargo test -- --nocapture'

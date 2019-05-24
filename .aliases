@@ -171,3 +171,5 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 
 # Cargo
 alias ct='cargo test -- --nocapture'
+alias cr='cargo run'
+alias cch='cargo check'

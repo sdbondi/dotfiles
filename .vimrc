@@ -59,6 +59,7 @@
   set history=1000          " store more history (default is 20)
   set nospell              " spell checking off
   set noswapfile            " don't use swapfiles
+  set encoding=UTF-8
 
   " don't create backup files
   set nobackup

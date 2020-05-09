@@ -32,7 +32,6 @@
   Bundle 'jistr/vim-nerdtree-tabs'
   Bundle 'terryma/vim-multiple-cursors'
   Bundle 'moll/vim-node'
-  Bundle 'joonty/vdebug.git'
   Bundle 'mattn/emmet-vim'
   Bundle 'editorconfig/editorconfig-vim'
   Bundle 'maxbrunsfeld/vim-yankstack'

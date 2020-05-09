@@ -58,9 +58,6 @@ fi
 complete -o default -o nospace -F _git g
 complete -o default -o nospace -F _git_checkout co
 
-# init rbenv
-eval "$(rbenv init -)"
-
 # activate tmux autocomplete
 source ~/.tmux/tmux_completion.sh
 

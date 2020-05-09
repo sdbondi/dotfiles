@@ -303,3 +303,7 @@ function ai2pdf() {
 function ngrokhttp() {
   ngrok http $1 --region eu
 }
+
+function dcargo() {
+  RUST_LOG=trace RUST_BACKTRACE=1 cargo "$@"
+}

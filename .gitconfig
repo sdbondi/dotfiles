@@ -106,7 +106,7 @@
 [user]
 	name = Stanimal
 	email = sdbondi@users.noreply.github.com
-	signingkey = 73963C03A649FEB5
+	signingkey = 337B91EFC5F1027D8AEDF63D1885B149504C0A64
 [commit]
 	gpgsign = true
 [filter "lfs"]
@@ -114,3 +114,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[gpg]
+	program = gpg

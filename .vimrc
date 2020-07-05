@@ -51,6 +51,7 @@
 "}
 
 " General {
+  " set clipboard=unnamedplus
   filetype plugin indent on " automatically detect files types
   syntax on                " syntax highlighting
   set mouse=a              " automatically enable mouse usage

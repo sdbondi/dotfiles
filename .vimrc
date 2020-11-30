@@ -70,7 +70,7 @@
   set ttimeout
   set ttimeoutlen=1
 
-  set showbreak=↪
+  let &showbreak="\u21aa "
 
   set fillchars=diff:·
 

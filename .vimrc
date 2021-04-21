@@ -38,7 +38,7 @@
   Bundle 'christoomey/vim-tmux-navigator'
   Bundle 'elmcast/elm-vim'
   Bundle 'metakirby5/codi.vim'
-  Bundle 'prettier/vim-prettier'
+  " Bundle 'prettier/vim-prettier'
   Bundle 'sheerun/vim-polyglot'
   Bundle 'leafgarland/typescript-vim'
   Bundle 'Quramy/tsuquyomi'

@@ -11,14 +11,17 @@ alias ag='ag --hidden'
 alias hosts='sudo $EDITOR /etc/hosts'
 alias dl='cd ~/Downloads'
 alias dt='cd ~/Desktop'
-alias g='git'
-alias git='git'
 alias h='history'
 alias j='jobs'
 alias v='nvim'
 alias s='subl .'
 alias o='open'
 alias oo='open .'
+
+# Git
+alias g='git'
+alias git='git'
+alias ganp="git commit --amend -a --no-edit && git push --force"
 
 # Tmux
 alias mux='tmuxinator'
@@ -164,3 +167,5 @@ alias ct='cargo test -- --nocapture'
 alias cr='cargo run'
 alias cch='cargo check'
 alias ca='cargo add'
+
+alias isit='ps -e | grep'

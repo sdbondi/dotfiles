@@ -169,3 +169,9 @@ alias cch='cargo check'
 alias ca='cargo add'
 
 alias isit='ps -e | grep'
+
+# screen
+alias sc=screen
+alias scr="screen -r"
+alias scs="screen -S"
+alias scls="screen -ls"

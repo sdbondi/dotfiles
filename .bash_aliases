@@ -84,3 +84,9 @@ alias rn=react-native
 # Kubernetes
 alias k=kubectl
 alias kscc='kubectl config set current-context'
+
+# screen
+alias sc=screen
+alias scr="screen -r"
+alias scs="screen -S"
+alias scls="screen -ls"

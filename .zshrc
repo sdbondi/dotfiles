@@ -117,3 +117,4 @@ source ~/.aliases
 source ~/.functions
 
 eval "$(pyenv init -)"
+source $HOME/.poetry/env

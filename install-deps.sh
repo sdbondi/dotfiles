@@ -6,9 +6,10 @@
 sudo bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
 
-# homebrew!
-# you need the code CLI tools YOU FOOL.
-ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
+# Install Homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+brew upgrade
 
 # install node the right way
 # https://gist.github.com/DanHerbert/9520689
@@ -86,3 +87,6 @@ sudo easy_install Pygments
 
 # chrome canary as default
 # on a mac you can set chrome canary as your default inside of Safari preferences :)
+
+brew install duf git-delta zoxide xh
+

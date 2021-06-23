@@ -7,9 +7,10 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/stanleybondi/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 # Set name of the theme to load --- if set to "random", it will
@@ -118,3 +119,14 @@ source ~/.functions
 
 eval "$(pyenv init -)"
 source $HOME/.poetry/env
+
+eval "$(zoxide init zsh)"
+
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+
+bindkey '^r' _atuin_search_widget
+
+# depends on terminal mode
+#bindkey '^[[A' _atuin_search_widget
+#bindkey '^[OA' _atuin_search_widget

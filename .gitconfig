@@ -28,6 +28,8 @@
 	fr = "flow release"
 	# git flow hotfix
 	fh = "flow hotfix"
+	# My 'u' key is dodgy
+	psh = "push"
 
 [apply]
 	# Detect whitespace errors when applying a patch

@@ -130,3 +130,7 @@ bindkey '^r' _atuin_search_widget
 # depends on terminal mode
 #bindkey '^[[A' _atuin_search_widget
 #bindkey '^[OA' _atuin_search_widget
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

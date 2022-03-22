@@ -81,9 +81,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Fix git completion - http://29a.ch/2013/8/9/fixing-bash-autocomplete-on-ubuntu-13-04
 source /usr/share/bash-completion/completions/git
-complete -o default -o nospace -F _git g
+# Fix git completion - http://29a.ch/2013/8/9/fixing-bash-autocomplete-on-ubuntu-13-04
+#complete -o default -o nospace -F _git g
+
+# https://askubuntu.com/a/642778
+__git_complete g __git_main
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

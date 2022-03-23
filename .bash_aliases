@@ -10,6 +10,8 @@ alias aptupg='sudo apt upgrade'
 alias isit='ps -e | grep -i'
 
 alias g='git'
+alias ganp="git commit --amend -a --no-edit && git push --force"
+
 alias say='espeak -v en '
 
 alias ..='cd ..'

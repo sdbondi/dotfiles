@@ -13,6 +13,9 @@ alias g='git'
 alias say='espeak -v en '
 
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 alias ff='xdg-open . > /dev/null'
 

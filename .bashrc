@@ -213,3 +213,10 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
+
+
+# CUDA
+export PATH=/usr/local/cuda-11.6/bin${PATH:+:${PATH}}
+
+export LD_LIBRARY_PATH=/usr/local/cuda-11.6/lib64\
+                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}

@@ -1,46 +1,47 @@
+#!/usr/bin/env bash
+set -e
 # up to you (me) if you want to run this as a file or copy paste at your leisure
 
 
 # https://github.com/jamiew/git-friendly
 # the `push` command which copies the github compare URL to my clipboard is heaven
-sudo bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
-
+bash -c "$(curl https://raw.github.com/jamiew/git-friendly/master/install.sh)"
 
 # Install Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 brew upgrade
 
 # install node the right way
 # https://gist.github.com/DanHerbert/9520689
-if type -P node &> /dev/null; then
-	echo "node already installed"
-else
-	if [ -d /usr/local/lib/node_modules ]; then
-		rm -rf /usr/local/lib/node_modules
-	fi
-
-	echo "installing node"
-
-	brew uninstall node
-	brew install node --without-npm
-	echo prefix=~/.node >> ~/.npmrc
-	curl -L https://www.npmjs.org/install.sh | sh
-fi
-
-# install Node Version Manager
-if type -P nvm &> /dev/null; then
-	echo "nvm already installed"
-else
-	echo "installing nvm"
-
-	curl https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash
-fi
+#if type -P node &> /dev/null; then
+	#echo "node already installed"
+#else
+	#if [ -d /usr/local/lib/node_modules ]; then
+		#rm -rf /usr/local/lib/node_modules
+	#fi
+#
+	#echo "installing node"
+#
+	#brew uninstall node
+	#brew install node --without-npm
+	#echo prefix=~/.node >> ~/.npmrc
+	#curl -L https://www.npmjs.org/install.sh | sh
+#fi
+#
+## install Node Version Manager
+#if type -P nvm &> /dev/null; then
+	#echo "nvm already installed"
+#else
+	#echo "installing nvm"
+#
+	#curl https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash
+#fi
 
 # make a code directory for dependencies
-if [ ! -d ~/code ]; then
-	mkdir ~/code
-fi
+#if [ ! -d ~/code ]; then
+	#mkdir ~/code
+#fi
 
 # https://github.com/rupa/z
 # z, oh how i love you
@@ -66,11 +67,11 @@ chmod -X ~/code/git-completion/git-completion.bash
 
 # https://github.com/jeroenbegyn/VLCControl
 # VLC Controll Script
-cd ~/code
-git clone git://github.com/jeroenbegyn/VLCControl.git
+#cd ~/code
+#git clone git://github.com/jeroenbegyn/VLCControl.git
 
 # setup Vundle for Vim package management - https://github.com/gmarik/vundle
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+#git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # my magic photobooth symlink -> dropbox. I love it.
 # first move Photo Booth folder out of Pictures
@@ -82,7 +83,7 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 
 # for the c alias (syntax highlighted cat)
-sudo easy_install Pygments
+#sudo easy_install Pygments
 
 
 # chrome canary as default

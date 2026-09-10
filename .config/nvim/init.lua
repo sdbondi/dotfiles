@@ -433,20 +433,23 @@ require("lazy").setup({
 			end)
 		end
 	},
-	-- file explorer: edit the filesystem like a buffer
+	-- NERDTree-style file tree sidebar
 	{
-		'stevearc/oil.nvim',
-		opts = {
-			view_options = { show_hidden = true },
-		},
-		config = function(_, opts)
-			require('oil').setup(opts)
-			-- '-' opens the parent directory of the current file
-			vim.keymap.set('n', '-', '<cmd>Oil<cr>', { desc = 'Open parent directory' })
-			-- <leader>n opens the project root in a floating window
-			vim.keymap.set('n', '<leader>n', function()
-				require('oil').toggle_float(vim.fn.getcwd())
-			end, { desc = 'Toggle file explorer' })
+		'nvim-tree/nvim-tree.lua',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		config = function()
+			require('nvim-tree').setup({
+				view = { width = 32 },
+				renderer = { group_empty = true },
+				-- follow the file you're editing
+				update_focused_file = { enable = true },
+				filters = { dotfiles = false, custom = { '^\\.git$' } },
+				git = { enable = true },
+				diagnostics = { enable = true },
+			})
+			-- <leader>n toggles the tree, <leader>N reveals the current file in it
+			vim.keymap.set('n', '<leader>n', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle file tree' })
+			vim.keymap.set('n', '<leader>N', '<cmd>NvimTreeFindFile<cr>', { desc = 'Reveal current file in tree' })
 		end
 	},
 	-- LSP

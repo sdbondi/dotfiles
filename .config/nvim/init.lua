@@ -468,7 +468,59 @@ require("lazy").setup({
 			-- Setup language servers.
 
 			-- Rust
+			-- Some projects (tari/dan) enable nightly-only options in rustfmt.toml.
+			-- Stable rustfmt ignores those options with a warning, so format-on-save
+			-- would disagree with what the project's own `cargo +nightly fmt` produces.
+			-- Pick the rustfmt toolchain from the project root instead.
+			local rustfmt_pins = {
+				[vim.fs.normalize('~/tari/dan')] = 'nightly-2025-12-05',
+			}
+			local function rustfmt_toolchain(root)
+				if not root then
+					return nil
+				end
+				root = vim.fs.normalize(root)
+				for prefix, toolchain in pairs(rustfmt_pins) do
+					if root == prefix or vim.startswith(root, prefix .. '/') then
+						return toolchain
+					end
+				end
+				local cfg = io.open(root .. '/rustfmt.toml') or io.open(root .. '/.rustfmt.toml')
+				if not cfg then
+					return nil
+				end
+				local body = cfg:read('*a')
+				cfg:close()
+				-- presence of any nightly-only knob means stable rustfmt is the wrong tool here
+				for _, knob in ipairs({ 'unstable_features', 'group_imports', 'imports_granularity', 'imports_layout' }) do
+					if body:match(knob) then
+						return 'nightly'
+					end
+				end
+				return nil
+			end
+			-- lspconfig's own before_init copies settings into initializationOptions and
+			-- registers the runSingle code-lens command, so grab it before overriding it.
+			local rust_analyzer_before_init = vim.lsp.config['rust_analyzer'].before_init
+
 			vim.lsp.config('rust_analyzer', {
+				before_init = function(init_params, config)
+					-- config.settings is shared between clients; don't leak one project's override
+					config.settings = vim.deepcopy(config.settings)
+					local toolchain = rustfmt_toolchain(config.root_dir)
+					if toolchain then
+						config.settings['rust-analyzer'].rustfmt = {
+							overrideCommand = { 'rustup', 'run', toolchain, 'rustfmt' },
+						}
+					end
+					rust_analyzer_before_init(init_params, config)
+				end,
+				on_init = function(client)
+					-- rust-analyzer pulls its config again after initialize, and nvim answers
+					-- those pulls from client.settings, which is snapshotted before before_init
+					-- runs. Re-sync it, or the pulled config drops the rustfmt override.
+					client.settings = client.config.settings
+				end,
 				-- Server-specific settings. See `:help lspconfig-setup`
 				settings = {
 					["rust-analyzer"] = {
@@ -523,6 +575,9 @@ require("lazy").setup({
 			vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 			vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
+			-- one buffer-local BufWritePre per attached buffer lives in here
+			local format_on_save = vim.api.nvim_create_augroup('FormatOnSave', { clear = true })
+
 			-- Use LspAttach autocommand to only map the following keys
 			-- after the language server attaches to the current buffer
 			vim.api.nvim_create_autocmd('LspAttach', {
@@ -563,13 +618,13 @@ require("lazy").setup({
 					-- https://www.reddit.com/r/neovim/comments/143efmd/is_it_possible_to_disable_treesitter_completely/
 					client.server_capabilities.semanticTokensProvider = nil
 
-					-- format on save for Rust
+					-- format on save
 					if client.server_capabilities.documentFormattingProvider then
 						vim.api.nvim_create_autocmd("BufWritePre", {
-							group = vim.api.nvim_create_augroup("RustFormat", { clear = true }),
-							buffer = bufnr,
+							group = format_on_save,
+							buffer = ev.buf,
 							callback = function()
-								vim.lsp.buf.format({ bufnr = bufnr })
+								vim.lsp.buf.format({ bufnr = ev.buf })
 							end,
 						})
 					end

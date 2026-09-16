@@ -317,8 +317,9 @@ require("lazy").setup({
 	{
 		'https://codeberg.org/andyg/leap.nvim',
 		config = function()
-			vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap)')
-			vim.keymap.set('n',             'S', '<Plug>(leap-from-window)')
+			-- leap lives on gs/gS so that s and S keep their vanilla substitute meaning
+			vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap)')
+			vim.keymap.set('n',             'gS', '<Plug>(leap-from-window)')
 		end
 	},
 	-- better %

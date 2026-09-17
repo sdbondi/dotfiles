@@ -602,7 +602,13 @@ require("lazy").setup({
 					--vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
 					vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
 					vim.keymap.set({ 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action, opts)
-					vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+					vim.keymap.set('n', 'gr', function()
+						require'fzf-lua'.lsp_references({ winopts = { split = "belowright 20new" } })
+					end, opts)
+					-- callers only, via the server's call hierarchy
+					vim.keymap.set('n', 'gR', function()
+						require'fzf-lua'.lsp_incoming_calls({ winopts = { split = "belowright 20new" } })
+					end, opts)
 					vim.keymap.set('n', '<leader>f', function()
 						vim.lsp.buf.format { async = true }
 					end, opts)

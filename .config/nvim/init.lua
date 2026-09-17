@@ -272,6 +272,8 @@ require("lazy").setup({
 			-- call Base16hi("CocHintSign", g:base16_gui03, "", g:base16_cterm03, "", "", "")
 		end
 	},
+	-- multi-cursor: <C-n> selects word under cursor / adds next occurrence as a cursor
+	'mg979/vim-visual-multi',
 	-- nice bar at the bottom
 	{
 		'itchyny/lightline.vim',

@@ -459,6 +459,7 @@ require("lazy").setup({
 			-- <leader>n toggles the tree, <leader>N reveals the current file in it
 			vim.keymap.set('n', '<leader>n', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle file tree' })
 			vim.keymap.set('n', '<leader>N', '<cmd>NvimTreeFindFile<cr>', { desc = 'Reveal current file in tree' })
+			vim.keymap.set('n', '<leader>ff', '<cmd>NvimTreeFindFile<cr>', { desc = 'Reveal current file in tree' })
 		end
 	},
 	-- LSP

@@ -357,14 +357,14 @@ require("lazy").setup({
 			end)
 		end
 	},
-	-- auto-cd to root of git project
+	-- auto-cd to root of git project (disabled: breaks in git worktrees, which have no .git dir)
 	-- 'airblade/vim-rooter'
-	{
-		'notjedi/nvim-rooter.lua',
-		config = function()
-			require('nvim-rooter').setup()
-		end
-	},
+	-- {
+	-- 	'notjedi/nvim-rooter.lua',
+	-- 	config = function()
+	-- 		require('nvim-rooter').setup()
+	-- 	end
+	-- },
 	-- fzf support for ^p
 	{
 		'ibhagwan/fzf-lua',

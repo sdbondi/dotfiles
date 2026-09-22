@@ -117,6 +117,13 @@ vim.keymap.set('', 'L', '$')
 -- (X11 session, so xclip rather than upstream's wl-clipboard)
 vim.keymap.set('n', '<leader>p', '<cmd>read !xclip -selection clipboard -o<cr>')
 vim.keymap.set('n', '<leader>c', '<cmd>w !xclip -selection clipboard -i<cr><cr>')
+-- <leader>y copies the current file's absolute path, <leader>Y its path relative to cwd
+vim.keymap.set('n', '<leader>y', function()
+	vim.fn.system('xclip -selection clipboard', vim.fn.expand('%:p'))
+end, { desc = 'Copy absolute file path' })
+vim.keymap.set('n', '<leader>Y', function()
+	vim.fn.system('xclip -selection clipboard', vim.fn.expand('%:.'))
+end, { desc = 'Copy relative file path' })
 -- <leader><leader> toggles between buffers
 vim.keymap.set('n', '<leader><leader>', '<c-^>')
 -- <leader>, shows/hides hidden characters
@@ -615,6 +622,53 @@ require("lazy").setup({
 					vim.keymap.set('n', '<leader>f', function()
 						vim.lsp.buf.format { async = true }
 					end, opts)
+
+					-- <leader>rt runs cargo test for the current file's module via
+					-- rust-analyzer's runnables (module-level, not just the nearest test).
+					-- <leader>rn runs only the test under the cursor.
+					local function run_cargo_test(want_nearest)
+						local bufnr = ev.buf
+						local params = vim.lsp.util.make_position_params(0, 'utf-16')
+						params.textDocument.version = nil
+						vim.lsp.buf_request(bufnr, 'experimental/runnables', params, function(err, runnables)
+							if err or not runnables or #runnables == 0 then
+								vim.notify('No cargo runnables found', vim.log.levels.WARN)
+								return
+							end
+							local chosen
+							for _, r in ipairs(runnables) do
+								if r.kind == 'cargo' and r.args and r.args.cargoArgs then
+									local args = r.args.cargoArgs
+									local is_test_cmd = vim.tbl_contains(args, 'test')
+									if is_test_cmd then
+										local has_exact = vim.tbl_contains(r.args.executableArgs or {}, '--exact')
+										if want_nearest and has_exact then
+											chosen = r
+											break
+										elseif not want_nearest and not has_exact then
+											-- prefer the module-level runnable (fewest cargoArgs)
+											if not chosen or #args < #chosen.args.cargoArgs then
+												chosen = r
+											end
+										end
+									end
+								end
+							end
+							if not chosen then
+								vim.notify('No matching test runnable found', vim.log.levels.WARN)
+								return
+							end
+							local cmd = { 'cargo' }
+							vim.list_extend(cmd, chosen.args.cargoArgs)
+							if chosen.args.executableArgs and #chosen.args.executableArgs > 0 then
+								vim.list_extend(cmd, { '--' })
+								vim.list_extend(cmd, chosen.args.executableArgs)
+							end
+							vim.cmd('belowright 15split | terminal ' .. table.concat(vim.tbl_map(vim.fn.shellescape, cmd), ' '))
+						end)
+					end
+					vim.keymap.set('n', '<leader>rt', function() run_cargo_test(false) end, opts)
+					vim.keymap.set('n', '<leader>rn', function() run_cargo_test(true) end, opts)
 
 					local client = vim.lsp.get_client_by_id(ev.data.client_id)
 

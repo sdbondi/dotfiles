@@ -15,3 +15,5 @@ Thumbs.db
 
 .config/nvim/plugged
 .vim/bundled
+
+.config/alacritty/themes

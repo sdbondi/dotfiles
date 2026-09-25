@@ -537,11 +537,10 @@ require("lazy").setup({
 						cargo = {
 							features = "all",
 						},
-						checkOnSave = {
-							enable = true,
-						},
+						checkOnSave = true,
 						check = {
-							command = "clippy",
+							command = "check",
+							workspace = false,
 						},
 						imports = {
 							group = {

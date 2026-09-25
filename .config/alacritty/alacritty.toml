@@ -28,5 +28,6 @@ style = { shape = "Block", blinking = "Off" }
 [keyboard]
 bindings = [
   { key = "Return", mods = "Shift", chars = "\u001b\r" },  # newline in Claude Code
+  { key = "NumpadEnter", chars = "\r" },
   { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
 ]

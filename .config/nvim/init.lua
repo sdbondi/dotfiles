@@ -431,6 +431,13 @@ require("lazy").setup({
 			vim.keymap.set('n', '<leader>s', function()
 				require'fzf-lua'.live_grep({ winopts = { split = "belowright 20new" } })
 			end, { desc = 'Live grep project' })
+			-- <leader>R live-greps Rust files only
+			vim.keymap.set('n', '<leader>R', function()
+				require'fzf-lua'.live_grep({
+					rg_opts = "--type rust --column --line-number --no-heading --color=always --smart-case --max-columns=4096",
+					winopts = { split = "belowright 20new" },
+				})
+			end, { desc = 'Live grep Rust files' })
 			-- <leader>S greps the word under the cursor
 			vim.keymap.set('n', '<leader>S', function()
 				require'fzf-lua'.grep_cword({ winopts = { split = "belowright 20new" } })

@@ -427,19 +427,19 @@ require("lazy").setup({
 				}
 				require'fzf-lua'.files(opts)
 			end)
-			-- <leader>s to live-grep the project
+			-- <leader>s live-greps Rust files only
 			vim.keymap.set('n', '<leader>s', function()
-				require'fzf-lua'.live_grep({ winopts = { split = "belowright 20new" } })
-			end, { desc = 'Live grep project' })
-			-- <leader>R live-greps Rust files only
-			vim.keymap.set('n', '<leader>R', function()
 				require'fzf-lua'.live_grep({
 					rg_opts = "--type rust --column --line-number --no-heading --color=always --smart-case --max-columns=4096",
 					winopts = { split = "belowright 20new" },
 				})
 			end, { desc = 'Live grep Rust files' })
-			-- <leader>S greps the word under the cursor
+			-- <leader>S live-greps the whole project
 			vim.keymap.set('n', '<leader>S', function()
+				require'fzf-lua'.live_grep({ winopts = { split = "belowright 20new" } })
+			end, { desc = 'Live grep project' })
+			-- <leader><C-s> greps the word under the cursor
+			vim.keymap.set('n', '<leader><C-s>', function()
 				require'fzf-lua'.grep_cword({ winopts = { split = "belowright 20new" } })
 			end, { desc = 'Grep word under cursor' })
 			-- use fzf to search buffers as well

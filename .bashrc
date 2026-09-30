@@ -135,11 +135,6 @@ genpasswd() {
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
 
-md() {
-  local dir=$1
-  mkdir -p $dir && cd $_
-}
-
 PATH="$PATH:$HOME/.bin"
 
 # NPM / NODE

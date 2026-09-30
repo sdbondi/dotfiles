@@ -109,6 +109,12 @@ source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 source ~/.functions
 
+# mkdir -p and cd into it (overrides oh-my-zsh's `md` alias)
+unalias md 2>/dev/null
+md() {
+  mkdir -p -- "$1" && cd -- "$1"
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 setopt no_share_history
